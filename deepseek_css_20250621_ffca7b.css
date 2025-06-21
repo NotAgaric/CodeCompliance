@@ -1,0 +1,41 @@
+/* Добавляем кастомные стили */
+.avatar {
+  border-radius: 50%;
+  width: 200px;
+  margin: 0 auto 2rem;
+  display: block;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  border: 1px solid #eee;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.btn {
+  display: inline-block;
+  background: #159957;
+  color: white!important;
+  padding: 12px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+}
