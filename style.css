@@ -848,12 +848,12 @@ footer .container .content .social p {
   
   /* Герой-секция */
   .hero {
-    padding: 90px 0 40px !important;
+    padding: 80px 0 70px !important; /* Увеличили отступ снизу для стрелки */
     min-height: 95vh;
   }
   
   .hero .container .content .text h1 {
-    font-size: 3.5rem !important;
+    font-size: 3.8rem !important; /* Увеличили размер */
     line-height: 1.2;
     text-align: center;
   }
@@ -862,13 +862,14 @@ footer .container .content .social p {
     margin-left: 0;
   }
   
-  /* Исправление для LAW & CODE, AI COMPLIANCE, URFU APPLI */
+  /* Надписи LAW & CODE, AI COMPLIANCE, URFU APPLI */
   .hero .container .content .short-info {
     position: relative;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
+    flex-direction: row; /* Располагаем в один ряд */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px; /* Увеличили расстояние между надписями */
     padding: 0 15px;
     bottom: auto;
     margin-top: 25px;
@@ -879,16 +880,17 @@ footer .container .content .social p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    min-width: 150px;
     text-align: center;
   }
   
   .hero .container .content .short-info .left-side h1,
   .hero .container .content .short-info .right-side h1 {
-    font-size: 1.1rem !important;
+    font-size: 1.3rem !important; /* Увеличили размер */
     display: flex;
     flex-direction: column;
     align-items: center;
+    white-space: nowrap;
   }
   
   /* Возвращение анимации для статуса */
@@ -923,14 +925,16 @@ footer .container .content .social p {
     }
   }
   
-  /* Стрелка под временем и статусом */
+  /* Стрелка в самом низу */
   .hero .container .content .arrow {
-    position: relative;
-    margin: 20px auto 0;
-    bottom: auto;
+    position: absolute;
+    bottom: 20px; /* Располагаем в самом низу */
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 auto;
     width: 60px;
     height: 60px;
-    order: 3;
+    z-index: 10;
   }
   
   /* Изменение часового пояса с +7 на +5 */
@@ -954,77 +958,68 @@ footer .container .content .social p {
     position: relative;
   }
   
-  .about .container .content .title,
-  .about .container .content .profile-container,
-  .about .container .content .about-me {
-    width: 100% !important;
-    height: auto;
-  }
-  
   .about .container .content .title {
-    margin-top: 0;
+    margin-top: 10px; /* Подняли выше */
     text-align: center;
   }
   
   .about .container .content .title h1 {
-    font-size: 2.5rem !important;
+    font-size: 2.8rem !important; /* Увеличили размер */
   }
   
+  /* Возвращаем обводку вокруг изображения */
   .about .container .content .profile-container .profile {
     height: 350px;
     border-radius: 32px;
-    background: transparent !important;
+    background: var(--gray) !important; /* Бежевая обводка */
     overflow: hidden;
+    padding: 10px; /* Отступ внутри обводки */
+    box-shadow: 0 0 0 10px var(--gray); /* Толстая обводка */
   }
   
   .about .container .content .profile-container .profile img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 25px; /* Сохраняем скругление */
   }
   
-  /* Убираем черный квадрат вокруг текста */
+  /* Текст "Обо мне" */
   .about .container .content .about-me {
     padding: 0;
     text-align: center;
     background: transparent !important;
+    margin-top: -10px; /* Поднимаем ближе к фото */
   }
   
   .about .container .content .about-me p {
     margin-bottom: 20px;
     line-height: 1.6;
     padding: 0 10px;
+    font-size: 1.1rem; /* Увеличили размер текста */
   }
   
   .about .container .content .about-me button {
     width: auto;
-    padding: 10px 25px;
+    padding: 12px 30px;
     margin: 0 auto;
-    background: transparent;
-    border: 2px solid var(--white);
-    border-radius: 32px;
-    color: var(--white);
-    transition: all 0.3s ease;
-  }
-  
-  .about .container .content .about-me button:hover {
-    background: var(--white);
-    color: var(--black);
+    font-size: 1.1rem;
   }
   
   /* Бегущая строка - увеличена и поднята выше */
   .about .container .content .text-wrapper {
     position: relative;
     bottom: auto;
-    margin-top: 30px;
+    margin-top: 20px; /* Подняли выше */
     order: 5;
     z-index: 2;
   }
   
   .about .container .content .text-wrapper .text h1 {
-    font-size: 6rem !important;
+    font-size: 7rem !important; /* Увеличили еще больше */
     line-height: 0.8;
     white-space: nowrap;
+    margin-top: -20px; /* Поднимаем надпись */
   }
   
   /* Проекты */
@@ -1039,7 +1034,7 @@ footer .container .content .social p {
   
   .project .container .content .project-area .projects {
     width: 100%;
-    height: 280px;
+    height: 300px; /* Увеличили высоту */
     margin-bottom: 20px;
   }
   
@@ -1047,30 +1042,23 @@ footer .container .content .social p {
   .project .container .content .header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     margin-bottom: 25px;
+    flex-wrap: wrap;
   }
   
   .project .container .content .header .title {
     flex: 1;
     text-align: right;
+    min-width: 70%;
   }
   
   .project .container .content .header button {
     width: auto;
-    padding: 10px 20px;
+    padding: 10px 25px;
     white-space: nowrap;
-    font-size: 0.95rem;
-    background: transparent;
-    border: 2px solid var(--white);
-    border-radius: 32px;
-    color: var(--white);
-    transition: all 0.3s ease;
-  }
-  
-  .project .container .content .header button:hover {
-    background: var(--white);
-    color: var(--black);
+    font-size: 1rem;
+    margin-top: 10px;
   }
   
   /* Контакты */
@@ -1088,29 +1076,6 @@ footer .container .content .social p {
     gap: 40px;
   }
   
-  .contact .container .content .contact-area .left-side,
-  .contact .container .content .contact-area .right-side {
-    width: 100%;
-    height: auto;
-  }
-  
-  .contact .container .content .contact-area .left-side h1 {
-    font-size: 2.5rem !important;
-    transform: none !important;
-    text-align: center;
-    line-height: 1.3;
-  }
-  
-  .contact .container .content .contact-area .left-side h1:nth-child(2) {
-    margin-left: 0;
-  }
-  
-  /* Форма контактов */
-  .contact-form {
-    max-width: 500px;
-    margin: 0 auto;
-  }
-  
   /* Футер */
   footer .container .content {
     padding: 30px 0;
@@ -1120,11 +1085,17 @@ footer .container .content .social p {
 @media only screen and (max-width: 480px) {
   /* Дополнительные исправления для маленьких экранов */
   .hero .container .content .text h1 {
-    font-size: 2.5rem !important;
+    font-size: 2.8rem !important;
   }
   
-  .hero .container .content .text .row-2 {
-    margin-left: 0;
+  /* Надписи в один ряд с переносом на маленьких экранах */
+  .hero .container .content .short-info {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .hero .container .content .short-info > div {
+    min-width: 100%;
   }
   
   .about .container .content .profile-container .profile {
@@ -1132,41 +1103,16 @@ footer .container .content .social p {
   }
   
   .about .container .content .text-wrapper .text h1 {
-    font-size: 4rem !important;
+    font-size: 5rem !important;
   }
   
   .project .container .content .project-area .projects {
-    height: 240px;
-  }
-  
-  .contact .container .content .contact-area .left-side h1 {
-    font-size: 2rem !important;
-  }
-  
-  /* Навигация */
-  header .container .content nav a {
-    font-size: 0.9rem;
-    padding: 5px 8px;
+    height: 260px;
   }
   
   /* Уменьшаем отступы */
   .hero {
-    padding: 80px 0 30px !important;
-  }
-  
-  .about, .project, .contact {
-    margin: 30px 0 !important;
-  }
-  
-  /* Финалная настройка кнопки */
-  .project .container .content .header button {
-    padding: 8px 15px;
-    font-size: 0.9rem;
-  }
-  
-  /* Центрирование статуса */
-  .hero .container .content .short-info .right-side {
-    align-items: center;
+    padding: 70px 0 60px !important;
   }
 }
 
@@ -1188,7 +1134,7 @@ footer .container .content .social p {
   
   /* Герой-секция */
   .hero {
-    padding: 70px 0 20px !important;
+    padding: 60px 0 50px !important;
     min-height: 85vh;
   }
   
@@ -1205,12 +1151,11 @@ footer .container .content .social p {
   }
   
   .hero .container .content .short-info > div {
-    width: auto;
     min-width: 180px;
   }
   
   .hero .container .content .arrow {
-    margin: 15px auto 0;
+    bottom: 15px;
   }
   
   /* Секция "Обо мне" */
@@ -1237,23 +1182,30 @@ footer .container .content .social p {
   }
   
   .about .container .content .profile-container .profile {
-    height: 250px;
+    height: 220px;
   }
   
   .about .container .content .text-wrapper .text h1 {
     font-size: 3.5rem !important;
+    margin-top: -10px;
   }
   
   /* Проекты */
   .project .container .content .project-area {
     flex-direction: row;
     flex-wrap: wrap;
+    height: auto;
   }
   
   .project .container .content .project-area .projects {
     width: calc(50% - 10px);
-    height: 200px;
+    height: 180px;
     margin-bottom: 15px;
+  }
+  
+  /* Заголовки проектов */
+  .project .container .content .project-area .projects .desc h1 {
+    font-size: 2.5rem !important;
   }
   
   /* Контакты */
@@ -1270,19 +1222,28 @@ footer .container .content .social p {
   
   .contact .container .content .contact-area .left-side h1 {
     font-size: 1.8rem !important;
+    line-height: 1.2;
+  }
+  
+  .contact .container .content .contact-area .left-side h1:nth-child(2) {
+    margin-left: 20%;
   }
   
   /* Форма контактов */
   .contact-form {
     max-width: 100%;
   }
+  
+  .form-group input,
+  .form-group textarea {
+    font-size: 1rem;
+  }
 }
 
 @media only screen and (max-width: 768px) and (orientation: landscape) and (max-height: 400px) {
   /* Дополнительные стили для очень коротких экранов */
   .hero {
-    padding: 50px 0 15px !important;
-    min-height: 80vh;
+    padding: 40px 0 35px !important;
   }
   
   .hero .container .content .text h1 {
@@ -1290,10 +1251,15 @@ footer .container .content .social p {
   }
   
   .about .container .content .profile-container .profile {
-    height: 200px;
+    height: 180px;
   }
   
   .project .container .content .project-area .projects {
-    height: 150px;
+    height: 140px;
   }
-    }
+  
+  .about .container .content .text-wrapper .text h1 {
+    font-size: 2.8rem !important;
+  }
+  }
+
