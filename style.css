@@ -4,7 +4,17 @@
   --white: #b8b2ad;
   --gray: #d6b08f;
 }
+.container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
 
+section {
+  box-sizing: border-box;
+  overflow: hidden;
+}
 * {
   margin: 0;
   padding: 0;
@@ -632,11 +642,62 @@ header .container .content .extra-nav a:hover span {
   overflow: hidden;
 }
 
+/* Удалите старые стили и добавьте эти */
 .project .container .content .project-area .projects img {
   filter: brightness(100%);
   width: 100%;
-  height: 100%;
+  height: auto; /* Изменено с 100% */
+  max-height: 300px; /* Ограничение по высоте */
+  object-fit: contain; /* Сохраняет пропорции */
+  display: block;
   transition: 0.3s linear;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .project .container .content .project-area .projects img {
+    max-height: 250px;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project .container .content .project-area .projects img {
+    max-height: 40vh; /* 40% высоты экрана */
+    object-fit: scale-down;
+  }
+}
+.portfolio-items {
+  display: flex !important;
+  flex-direction: column;
+  gap: 30px;
+  padding: 0 15px;
+}
+
+.portfolio-item {
+  width: 100%;
+  max-width: 100%;
+  background: #2a2a2a;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  .portfolio-items {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .portfolio-items {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .project .container .content .project-area .projects:hover img {
@@ -817,141 +878,39 @@ footer .container .content .social .logo:hover {
 footer .container .content .social p {
   font-weight: bold;
 }
-/* Адаптивная типографика */
-html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
+/* Экстренное исправление размеров текста */
+@media (max-width: 767px) {
+  body {
+    font-size: 13px !important;
+  }
+  
+  h1 {
+    font-size: 1.8rem !important;
+    line-height: 1.3;
+  }
+  
+  h2.section-title {
+    font-size: 1.6rem !important;
+  }
+  
+  h3 {
+    font-size: 1.3rem !important;
+  }
+  
+  .hero p {
+    font-size: 1rem !important;
+  }
+  
+  .portfolio-info p {
+    font-size: 0.9rem !important;
   }
 }
-
-body {
-  font-size: 1rem;
-  line-height: 1.5;
-}
-/* Верхняя панель */
-header {
-  padding: 15px 5%;
-}
-
-nav ul {
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-nav a {
-  font-size: 1rem;
-  padding: 8px 12px;
-}
-
-/* Герой-секция */
-.hero {
-  padding: 40px 5%;
-}
-
-.hero h1 {
-  font-size: 2.2rem;
-  margin-bottom: 15px;
-}
-
-.hero p {
-  font-size: 1.1rem;
-  max-width: 100%;
-}
-.about-content {
-  flex-direction: column;
-  align-items: center;
-  gap: 25px;
-}
-
-.about-text {
-  width: 100%;
-  padding: 0;
-}
-
-.about-image {
-  width: 100%;
-  max-width: 350px;
-}
-
 .about-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-/* Сетка проектов */
-.portfolio-items {
-  grid-template-columns: 1fr;
-  gap: 25px;
-  padding: 0 10px;
-}
-
-.portfolio-item {
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.portfolio-image {
-  width: 100%;
-  height: 250px; /* Фиксированная высота */
-  object-fit: cover; /* Важно! Предотвращает сжатие */
+  width: 100% !important;
+  max-width: 350px !important;
+  height: auto !important;
   display: block;
-}
-
-.portfolio-info {
-  padding: 20px;
-}
-
-.portfolio-info h3 {
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-}
-
-.portfolio-info p {
-  font-size: 0.95rem;
-  margin-bottom: 15px;
-}
-.contact-form {
-  width: 100%;
-  padding: 0 10px;
-}
-
-.form-group input,
-.form-group textarea {
-  padding: 12px;
-  font-size: 1rem;
-}
-
-.btn {
-  padding: 12px 25px;
-  font-size: 1rem;
-}
-
-footer {
-  padding: 20px 10px;
-  font-size: 0.9rem;
-}
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 1.8rem;
-  }
-  
-  .section-title {
-    font-size: 1.8rem;
-    margin-bottom: 25px;
-  }
-  
-  .portfolio-image {
-    height: 200px;
-  }
-  
-  .btn {
-    width: 100%;
-    margin: 5px 0;
-    text-align: center;
-  }
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
