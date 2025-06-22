@@ -871,6 +871,54 @@ footer .container .content .social p {
     bottom: auto;
   }
   
+  /* ===== ВАШИ ЗАПРОСЫ ДЛЯ ГЕРОЙ-СЕКЦИИ ===== */
+  /* Центрирование LAW & CODE, AI COMPLIANCE, URFU APPLI */
+  .hero .container .content .short-info {
+    align-items: center !important;
+    text-align: center;
+  }
+  
+  .hero .container .content .short-info .left-side,
+  .hero .container .content .short-info .right-side {
+    align-items: center !important;
+  }
+  
+  /* Перемещение стрелки под временем */
+  .hero .container .content .arrow {
+    order: 3;
+    margin: 30px auto 0;
+  }
+  
+  /* Изменение часового пояса с +7 на +5 */
+  .hero .container .content .short-info .right-side h1 span {
+    position: relative;
+  }
+  
+  .hero .container .content .short-info .right-side h1 span::after {
+    content: "+5";
+    visibility: visible;
+    position: absolute;
+    left: 0;
+  }
+  
+  .hero .container .content .short-info .right-side h1 span:first-child {
+    visibility: hidden;
+    width: 0;
+  }
+  
+  /* Выравнивание Current Status и URFU APPLICANT */
+  .hero .container .content .short-info {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .hero .container .content .short-info > div {
+    flex: 0 0 auto;
+    width: auto;
+  }
+  
   /* Секция "Обо мне" */
   .about .container .content {
     flex-direction: column;
@@ -905,6 +953,33 @@ footer .container .content .social p {
   .about .container .content .about-me button {
     width: 100%;
     max-width: 200px;
+  }
+  
+  /* ===== ВАШ ЗАПРОС ДЛЯ "ОБО МНЕ" ===== */
+  /* Бегущая строка под текстом "Обо мне" */
+  .about .container .content .text-wrapper {
+    position: relative;
+    bottom: auto;
+    margin-top: 40px;
+    order: 5;
+  }
+  
+  .about .container .content .text-wrapper .text h1 {
+    font-size: 4rem !important;
+  }
+  
+  /* Центрирование и улучшение отображения */
+  .about .container .content .title h1 {
+    text-align: center;
+  }
+  
+  .about .container .content .about-me {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .about .container .content .about-me button {
+    margin: 10px auto 0;
   }
   
   /* Проекты */
@@ -961,6 +1036,11 @@ footer .container .content .social p {
     height: 300px;
   }
   
+  /* Дополнительные настройки для бегущей строки */
+  .about .container .content .text-wrapper .text h1 {
+    font-size: 3rem !important;
+  }
+  
   .project .container .content .project-area .projects {
     height: 250px;
   }
@@ -994,5 +1074,11 @@ footer .container .content .social p {
   
   .hero-info .status {
     align-self: flex-start;
+  }
+  
+  /* Уменьшаем фото в "Обо мне" для лучшего отображения */
+  .about .container .content .profile-container .profile {
+    height: 280px;
+    border-radius: 24px;
   }
 }
