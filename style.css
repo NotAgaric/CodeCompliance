@@ -642,42 +642,73 @@ header .container .content .extra-nav a:hover span {
   transition: 0.3s linear;
 }
 
+/* Замените текущие стили проектов */
 .project .container .content .project-area .projects {
-  position: relative;
-  cursor: pointer;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+.project-item {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 33%;
-  height: 100%;
-  background: #d6b08f;
-  border-radius: 64px;
+  flex-direction: column;
+  background: #2a2a2a;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.project-image-container {
+  flex: 1;
+  min-height: 250px;
   overflow: hidden;
 }
 
-/* Замените текущие стили для изображений проектов */
 .project .container .content .project-area .projects img {
-  filter: brightness(100%);
   width: 100%;
-  height: auto; /* Было 100% - это главная проблема! */
-  max-height: 280px; /* Ограничиваем высоту */
-  object-fit: cover; /* Сохраняет пропорции */
-  transition: 0.3s linear;
-  border-radius: 8px;
-  display: block;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-@media (max-width: 768px) {
-  .project .container .content .project-area .projects img {
-    max-height: 220px;
-    object-fit: contain; /* Полное изображение без обрезки */
+.project-info {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-info h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.project-info p {
+  flex-grow: 1;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .project .container .content .project-area .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .project-item {
+    flex-direction: row;
+    min-height: 300px;
+  }
+  
+  .project-image-container {
+    min-height: auto;
+    flex: 0 0 50%;
   }
 }
 
-@media (max-width: 480px) {
-  .project .container .content .project-area .projects img {
-    max-height: 35vh; /* 35% высоты экрана */
-    padding: 0 5px; /* Минимальные отступы по бокам */
+@media (min-width: 992px) {
+  .project .container .content .project-area .projects {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 .portfolio-items {
@@ -685,30 +716,6 @@ header .container .content .extra-nav a:hover span {
   flex-direction: column;
   gap: 30px;
   padding: 0 15px;
-}
-
-.portfolio-item {
-  width: 100%;
-  max-width: 100%;
-  background: #2a2a2a;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  margin-bottom: 20px;
-}
-
-@media (min-width: 768px) {
-  .portfolio-items {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .portfolio-items {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 
 .project .container .content .project-area .projects:hover img {
@@ -1100,4 +1107,108 @@ header {
     margin-top: 10px;
   }
 }
+/* Добавьте в css/style.css */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
+.about-image-container {
+  position: relative;
+}
+
+.floating-name {
+  position: absolute;
+  top: -25px;
+  left: 0;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ff6b6b;
+  opacity: 0.8;
+  z-index: 2;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.about-image {
+  position: relative;
+  z-index: 1;
+  margin-right: 20px;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+@media (min-width: 992px) {
+  .about-content {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  
+  .about-text {
+    flex: 1;
+  }
+  
+  .floating-name {
+    font-size: 3.5rem;
+    top: -35px;
+  }
+}
+/* В конце css/style.css */
+.contact {
+  position: relative;
+  padding: 80px 0 !important;
+}
+
+.contact .container {
+  position: relative;
+  z-index: 2;
+}
+
+.contact .section-title {
+  margin-bottom: 30px;
+  position: relative;
+  top: -10px;
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 60px 0 !important;
+  }
+  
+  .contact .section-title {
+    margin-bottom: 20px;
+    top: 0;
+  }
+  
+  .contact-form {
+    padding: 0 10px;
+  }
+}
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+}
+
+.form-group textarea {
+  min-height: 120px;
+}
+
+.submit-btn {
+  text-align: center;
+  margin-top: 10px;
+}
