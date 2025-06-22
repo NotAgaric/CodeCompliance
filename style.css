@@ -4,30 +4,7 @@
   --white: #b8b2ad;
   --gray: #d6b08f;
 }
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px; /* Было 0 40px - слишком много */
-  box-sizing: border-box;
-}
 
-@media (max-width: 768px) {
-  .container {
-    padding: 0 15px !important; /* Уменьшаем отступы на мобильных */
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding: 0 12px !important; /* Минимальные отступы на маленьких экранах */
-  }
-}
-
-section {
-  box-sizing: border-box;
-  overflow: hidden;
-}
 * {
   margin: 0;
   padding: 0;
@@ -642,80 +619,25 @@ header .container .content .extra-nav a:hover span {
   transition: 0.3s linear;
 }
 
-/* Замените текущие стили проектов */
 .project .container .content .project-area .projects {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 30px;
-}
-
-.project-item {
+  position: relative;
+  cursor: pointer;
   display: flex;
-  flex-direction: column;
-  background: #2a2a2a;
-  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 33%;
+  height: 100%;
+  background: var(--gray);
+  border-radius: 64px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-.project-image-container {
-  flex: 1;
-  min-height: 250px;
-  overflow: hidden;
+  filter: grayscale(100);
 }
 
 .project .container .content .project-area .projects img {
+  filter: brightness(100%);
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.project-info {
-  flex: 1;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-}
-
-.project-info h3 {
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-}
-
-.project-info p {
-  flex-grow: 1;
-  margin-bottom: 15px;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-@media (min-width: 768px) {
-  .project .container .content .project-area .projects {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .project-item {
-    flex-direction: row;
-    min-height: 300px;
-  }
-  
-  .project-image-container {
-    min-height: auto;
-    flex: 0 0 50%;
-  }
-}
-
-@media (min-width: 992px) {
-  .project .container .content .project-area .projects {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-.portfolio-items {
-  display: flex !important;
-  flex-direction: column;
-  gap: 30px;
-  padding: 0 15px;
+  transition: 0.3s linear;
 }
 
 .project .container .content .project-area .projects:hover img {
@@ -734,13 +656,11 @@ header .container .content .extra-nav a:hover span {
 
 .project .container .content .project-area .projects .desc h1 {
   font: italic bold 4rem "IBM Plex Sans", sans-serif;
-  color: #ffffff; 
 }
 
 .project .container .content .project-area .projects .desc p {
   text-align: center;
   width: 75%;
-  color: #ffffff; 
 }
 
 .project .container .content .project-area .projects:hover .desc {
@@ -895,320 +815,4 @@ footer .container .content .social .logo:hover {
 
 footer .container .content .social p {
   font-weight: bold;
-}
-/* Экстренное исправление размеров текста */
-@media (max-width: 767px) {
-  body {
-    font-size: 13px !important;
-  }
-  
-  h1 {
-    font-size: 1.8rem !important;
-    line-height: 1.3;
-  }
-  
-  h2.section-title {
-    font-size: 1.6rem !important;
-  }
-  
-  h3 {
-    font-size: 1.3rem !important;
-  }
-  
-  .hero p {
-    font-size: 1rem !important;
-  }
-  
-  .portfolio-info p {
-    font-size: 0.9rem !important;
-  }
-}
-.project-info {
-  padding: 15px 10px !important; /* Уменьшаем отступы внутри карточек */
-}
-
-.project-info h3 {
-  font-size: 1.3rem !important;
-  margin-bottom: 8px !important;
-  line-height: 1.3;
-}
-
-.project-info p {
-  font-size: 0.9rem !important;
-  line-height: 1.4;
-  margin-bottom: 12px !important;
-}
-
-@media (max-width: 480px) {
-  .project-info h3 {
-    font-size: 1.15rem !important;
-  }
-  
-  .project-info p {
-    font-size: 0.85rem !important;
-  }
-}
-.project-item {
-  margin-bottom: 25px; /* Увеличиваем отступ между проектами */
-  padding: 10px; /* Внутренние отступы */
-  background: #2a2a2a;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-@media (max-width: 768px) {
-  .project-item {
-    margin-bottom: 30px; /* Больше пространства между проектами */
-  }
-}
-/* Глобальное уменьшение текста на мобильных */
-@media (max-width: 768px) {
-  body {
-    font-size: 14px !important;
-    line-height: 1.5;
-  }
-  
-  h1 {
-    font-size: 1.8rem !important;
-    line-height: 1.2;
-  }
-  
-  h2.section-title {
-    font-size: 1.6rem !important;
-    margin-bottom: 20px !important;
-  }
-  
-  .hero p {
-    font-size: 1.1rem !important;
-  }
-}
-
-@media (max-width: 480px) {
-  body {
-    font-size: 13px !important;
-  }
-  
-  h1 {
-    font-size: 1.6rem !important;
-  }
-  
-  h2.section-title {
-    font-size: 1.4rem !important;
-  }
-}
-.buttons {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap; /* Разрешаем перенос кнопок */
-}
-
-.btn {
-  padding: 8px 16px !important;
-  font-size: 0.9rem !important;
-  min-width: auto !important;
-}
-
-@media (max-width: 480px) {
-  .btn {
-    padding: 8px 12px !important;
-    font-size: 0.85rem !important;
-    width: 100%; /* Полная ширина на маленьких экранах */
-    margin-bottom: 5px;
-  }
-}
-/* Улучшаем отображение секций */
-section {
-  padding: 50px 0;
-  box-sizing: border-box;
-}
-
-@media (max-width: 768px) {
-  section {
-    padding: 35px 0 !important;
-  }
-}
-
-/* Фикс для шапки */
-header {
-  padding: 15px 5% !important;
-}
-
-@media (max-width: 480px) {
-  header {
-    padding: 12px 3% !important;
-  }
-}
-.about-image img {
-  width: 100% !important;
-  max-width: 350px !important;
-  height: auto !important;
-  display: block;
-  margin: 0 auto;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-/* В конец css/style.css */
-@media (max-width: 768px) {
-  header {
-    padding: 10px 0 !important;
-  }
-  
-  .logo {
-    font-size: 1.4rem;
-    margin-right: 10px;
-  }
-  
-  nav ul {
-    flex-wrap: wrap;
-    gap: 5px;
-    justify-content: center;
-  }
-  
-  nav li {
-    margin: 2px 5px;
-  }
-  
-  nav a {
-    font-size: 0.8rem;
-    padding: 4px 8px;
-  }
-  
-  .hero-content h1 {
-    font-size: 1.5rem !important;
-    line-height: 1.3;
-    margin-bottom: 10px;
-  }
-  
-  .hero-content p {
-    font-size: 0.9rem !important;
-  }
-}
-@media (max-width: 768px) {
-  .hero-info {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px !important;
-    margin-top: 15px;
-  }
-  
-  .hero-info div {
-    margin-bottom: 5px;
-    padding: 0;
-    border: none;
-  }
-  
-  .hero-info div:not(:first-child) {
-    padding-left: 0;
-    margin-left: 0;
-  }
-  
-  .hero-info .status {
-    align-self: flex-end;
-    margin-top: 10px;
-  }
-}
-/* Добавьте в css/style.css */
-.about-content {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.about-image-container {
-  position: relative;
-}
-
-.floating-name {
-  position: absolute;
-  top: -25px;
-  left: 0;
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #ff6b6b;
-  opacity: 0.8;
-  z-index: 2;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-
-.about-image {
-  position: relative;
-  z-index: 1;
-  margin-right: 20px;
-}
-
-.about-image img {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-@media (min-width: 992px) {
-  .about-content {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-  
-  .about-text {
-    flex: 1;
-  }
-  
-  .floating-name {
-    font-size: 3.5rem;
-    top: -35px;
-  }
-}
-/* В конце css/style.css */
-.contact {
-  position: relative;
-  padding: 80px 0 !important;
-}
-
-.contact .container {
-  position: relative;
-  z-index: 2;
-}
-
-.contact .section-title {
-  margin-bottom: 30px;
-  position: relative;
-  top: -10px;
-}
-
-@media (max-width: 768px) {
-  .contact {
-    padding: 60px 0 !important;
-  }
-  
-  .contact .section-title {
-    margin-bottom: 20px;
-    top: 0;
-  }
-  
-  .contact-form {
-    padding: 0 10px;
-  }
-}
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 12px 15px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 5px;
-  color: white;
-  font-size: 1rem;
-}
-
-.form-group textarea {
-  min-height: 120px;
-}
-
-.submit-btn {
-  text-align: center;
-  margin-top: 10px;
 }
