@@ -630,6 +630,7 @@ header .container .content .extra-nav a:hover span {
   background: #d6b08f;
   border-radius: 64px;
   overflow: hidden;
+  color: #ffffff; 
 }
 
 .project .container .content .project-area .projects img {
