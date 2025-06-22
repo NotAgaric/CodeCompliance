@@ -630,7 +630,6 @@ header .container .content .extra-nav a:hover span {
   background: #d6b08f;
   border-radius: 64px;
   overflow: hidden;
-  color: #ffffff; 
 }
 
 .project .container .content .project-area .projects img {
@@ -656,11 +655,13 @@ header .container .content .extra-nav a:hover span {
 
 .project .container .content .project-area .projects .desc h1 {
   font: italic bold 4rem "IBM Plex Sans", sans-serif;
+  color: #ffffff; 
 }
 
 .project .container .content .project-area .projects .desc p {
   text-align: center;
   width: 75%;
+  color: #ffffff; 
 }
 
 .project .container .content .project-area .projects:hover .desc {
