@@ -6,9 +6,22 @@
 }
 .container {
   width: 100%;
-  max-width: 100%;
-  padding: 0 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* Было 0 40px - слишком много */
   box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px !important; /* Уменьшаем отступы на мобильных */
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 12px !important; /* Минимальные отступы на маленьких экранах */
+  }
 }
 
 section {
@@ -642,31 +655,29 @@ header .container .content .extra-nav a:hover span {
   overflow: hidden;
 }
 
-/* Удалите старые стили и добавьте эти */
+/* Замените текущие стили для изображений проектов */
 .project .container .content .project-area .projects img {
   filter: brightness(100%);
   width: 100%;
-  height: auto; /* Изменено с 100% */
-  max-height: 300px; /* Ограничение по высоте */
-  object-fit: contain; /* Сохраняет пропорции */
-  display: block;
+  height: auto; /* Было 100% - это главная проблема! */
+  max-height: 280px; /* Ограничиваем высоту */
+  object-fit: cover; /* Сохраняет пропорции */
   transition: 0.3s linear;
-  margin: 0 auto;
   border-radius: 8px;
-  box-sizing: border-box;
+  display: block;
 }
 
 @media (max-width: 768px) {
   .project .container .content .project-area .projects img {
-    max-height: 250px;
-    padding: 0 10px;
+    max-height: 220px;
+    object-fit: contain; /* Полное изображение без обрезки */
   }
 }
 
 @media (max-width: 480px) {
   .project .container .content .project-area .projects img {
-    max-height: 40vh; /* 40% высоты экрана */
-    object-fit: scale-down;
+    max-height: 35vh; /* 35% высоты экрана */
+    padding: 0 5px; /* Минимальные отступы по бокам */
   }
 }
 .portfolio-items {
@@ -905,6 +916,121 @@ footer .container .content .social p {
     font-size: 0.9rem !important;
   }
 }
+.project-info {
+  padding: 15px 10px !important; /* Уменьшаем отступы внутри карточек */
+}
+
+.project-info h3 {
+  font-size: 1.3rem !important;
+  margin-bottom: 8px !important;
+  line-height: 1.3;
+}
+
+.project-info p {
+  font-size: 0.9rem !important;
+  line-height: 1.4;
+  margin-bottom: 12px !important;
+}
+
+@media (max-width: 480px) {
+  .project-info h3 {
+    font-size: 1.15rem !important;
+  }
+  
+  .project-info p {
+    font-size: 0.85rem !important;
+  }
+}
+.project-item {
+  margin-bottom: 25px; /* Увеличиваем отступ между проектами */
+  padding: 10px; /* Внутренние отступы */
+  background: #2a2a2a;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .project-item {
+    margin-bottom: 30px; /* Больше пространства между проектами */
+  }
+}
+/* Глобальное уменьшение текста на мобильных */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px !important;
+    line-height: 1.5;
+  }
+  
+  h1 {
+    font-size: 1.8rem !important;
+    line-height: 1.2;
+  }
+  
+  h2.section-title {
+    font-size: 1.6rem !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .hero p {
+    font-size: 1.1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 13px !important;
+  }
+  
+  h1 {
+    font-size: 1.6rem !important;
+  }
+  
+  h2.section-title {
+    font-size: 1.4rem !important;
+  }
+}
+.buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap; /* Разрешаем перенос кнопок */
+}
+
+.btn {
+  padding: 8px 16px !important;
+  font-size: 0.9rem !important;
+  min-width: auto !important;
+}
+
+@media (max-width: 480px) {
+  .btn {
+    padding: 8px 12px !important;
+    font-size: 0.85rem !important;
+    width: 100%; /* Полная ширина на маленьких экранах */
+    margin-bottom: 5px;
+  }
+}
+/* Улучшаем отображение секций */
+section {
+  padding: 50px 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 35px 0 !important;
+  }
+}
+
+/* Фикс для шапки */
+header {
+  padding: 15px 5% !important;
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 12px 3% !important;
+  }
+}
 .about-image img {
   width: 100% !important;
   max-width: 350px !important;
@@ -914,3 +1040,4 @@ footer .container .content .social p {
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
+
