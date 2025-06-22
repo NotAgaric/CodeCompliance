@@ -655,11 +655,13 @@ header .container .content .extra-nav a:hover span {
 
 .project .container .content .project-area .projects .desc h1 {
   font: italic bold 4rem "IBM Plex Sans", sans-serif;
+   color: #ffffff;
 }
 
 .project .container .content .project-area .projects .desc p {
   text-align: center;
   width: 75%;
+   color: #ffffff;
 }
 
 .project .container .content .project-area .projects:hover .desc {
@@ -814,4 +816,183 @@ footer .container .content .social .logo:hover {
 
 footer .container .content .social p {
   font-weight: bold;
+}
+/* ========================================= */
+/* МОБИЛЬНАЯ АДАПТАЦИЯ (ТОЛЬКО ДЛЯ ТЕЛЕФОНОВ) */
+/* ========================================= */
+
+@media only screen and (max-width: 768px) {
+  /* Общие исправления */
+  .container {
+    padding: 0 15px !important;
+  }
+  
+  body {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* Шапка */
+  header .container .content {
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px 0;
+  }
+  
+  header .container .content nav {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  /* Герой-секция */
+  .hero .container .content .text h1 {
+    font-size: 3.5rem !important;
+    line-height: 1.2;
+  }
+  
+  .hero .container .content .text .row-2 {
+    margin-left: 0;
+  }
+  
+  .hero .container .content .short-info {
+    position: relative;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 0 15px;
+    bottom: auto;
+    margin-top: 30px;
+  }
+  
+  .hero .container .content .arrow {
+    position: relative;
+    margin-top: 30px;
+    bottom: auto;
+  }
+  
+  /* Секция "Обо мне" */
+  .about .container .content {
+    flex-direction: column;
+    height: auto;
+    gap: 40px;
+  }
+  
+  .about .container .content .title,
+  .about .container .content .profile-container,
+  .about .container .content .about-me {
+    width: 100% !important;
+    height: auto;
+  }
+  
+  .about .container .content .title {
+    margin-top: 0;
+  }
+  
+  .about .container .content .title h1 {
+    font-size: 2.5rem !important;
+  }
+  
+  .about .container .content .profile-container .profile {
+    height: 400px;
+    border-radius: 32px;
+  }
+  
+  .about .container .content .about-me {
+    padding-left: 0;
+  }
+  
+  .about .container .content .about-me button {
+    width: 100%;
+    max-width: 200px;
+  }
+  
+  /* Проекты */
+  .project .container .content .project-area {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .project .container .content .project-area .projects {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+  }
+  
+  /* Контакты */
+  .contact .container .content {
+    height: auto;
+  }
+  
+  .contact .container .content .contact-area {
+    flex-direction: column;
+    height: auto;
+    gap: 40px;
+  }
+  
+  .contact .container .content .contact-area .left-side,
+  .contact .container .content .contact-area .right-side {
+    width: 100%;
+    height: auto;
+  }
+  
+  .contact .container .content .contact-area .left-side h1 {
+    font-size: 2.5rem !important;
+    transform: none !important;
+  }
+  
+  /* Футер */
+  footer .container .content {
+    padding: 30px 0;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  /* Дополнительные исправления для маленьких экранов */
+  .hero .container .content .text h1 {
+    font-size: 2.5rem !important;
+  }
+  
+  .hero .container .content .text .row-2 {
+    margin-left: 0;
+  }
+  
+  .about .container .content .profile-container .profile {
+    height: 300px;
+  }
+  
+  .project .container .content .project-area .projects {
+    height: 250px;
+  }
+  
+  .contact .container .content .contact-area .left-side h1 {
+    font-size: 2rem !important;
+  }
+  
+  /* Фикс для текста */
+  .hero .container .content .short-info .left-side h1,
+  .hero .container .content .short-info .right-side h1 {
+    font-size: 1rem !important;
+  }
+  
+  /* Навигация */
+  header .container .content nav a {
+    font-size: 0.9rem;
+  }
+  
+  /* Специальные исправления для надписей */
+  .hero-info {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .hero-info div {
+    padding: 0 !important;
+    border: none !important;
+    margin: 0 !important;
+  }
+  
+  .hero-info .status {
+    align-self: flex-start;
+  }
 }
