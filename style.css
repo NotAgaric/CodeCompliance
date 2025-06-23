@@ -832,6 +832,17 @@ footer .container .content .social p {
     line-height: 1.5;
     overflow-x: hidden;
   }
+  /* Исправление для мобильной версии */
+html {
+  background-color: #d6b08f; /* Цвет фона как в десктопе */
+}
+
+@media (max-width: 768px) {
+  body {
+    min-height: 100vh; /* Занимает всю высоту экрана */
+    background: #d6b08f !important; /* Переопределение цвета */
+  }
+}
 
   /* Шапка */
   header .container .content {
