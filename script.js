@@ -17,7 +17,7 @@ window.addEventListener("scroll", () => {
 const now = new Date();
 const jakartaTime = now.toLocaleString("en-US", { timeZone: "Asia/Jakarta" });
 const [date, time] = jakartaTime.split(", ");
-timeText.textContent = `${time} GMT+7`
+timeText.textContent = `${time} GMT+5`
 
 const yearText = document.getElementById("year");
 const year = new Date().getFullYear();
