@@ -834,7 +834,7 @@ footer .container .content .social p {
   }
   /* Исправление для мобильной версии */
 html {
-  background-color: #d6b08f; /* Цвет фона как в десктопе */
+  background-color: #dae3f1; /* Цвет фона как в десктопе */
 }
 
 @media (max-width: 768px) {
