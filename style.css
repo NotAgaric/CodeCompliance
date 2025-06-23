@@ -854,7 +854,7 @@ footer .container .content .social p {
   }
     /* Поднятие LAW & CODE, AI COMPLIANCE, URFU APPLI на 20px */
   .hero .container .content .text {
-    margin-bottom: 120px !important; /* Добавлен отступ снизу */
+    margin-bottom: 130px !important; /* Добавлен отступ снизу */
   }
   
   .hero .container .content .text h1 {
@@ -908,8 +908,8 @@ footer .container .content .social p {
   /* Кастомное позиционирование стрелки с ручным смещением */
   .hero .container .content .arrow {
     position: absolute;
-    bottom: -60px; /* Расположение внизу контента */
-    left: calc(50% - 30px); /* Центрирование с ручной корректировкой */
+    bottom:160px; /* Расположение внизу контента */
+    left: calc(50% - 50px); /* Центрирование с ручной корректировкой */
     width: 60px;
     height: 60px;
     z-index: 20; /* Поверх других элементов */
