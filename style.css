@@ -854,7 +854,7 @@ footer .container .content .social p {
   }
     /* Поднятие LAW & CODE, AI COMPLIANCE, URFU APPLI на 20px */
   .hero .container .content .text {
-    margin-bottom: 80px !important; /* Добавлен отступ снизу */
+    margin-bottom: 120px !important; /* Добавлен отступ снизу */
   }
   
   .hero .container .content .text h1 {
@@ -887,7 +887,7 @@ footer .container .content .social p {
     flex-direction: column;
     align-items: center;
     width: auto;
-    min-width: 160px;
+    min-width: 150px;
     text-align: center;
   }
   
