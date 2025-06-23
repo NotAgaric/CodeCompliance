@@ -904,8 +904,7 @@ footer .container .content .social p {
   .hero .container .content .arrow {
     position: absolute;
     bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%); /* Точное центрирование */
+    left: 60%;
     width: 60px;
     height: 60px;
     z-index: 10;
