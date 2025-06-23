@@ -870,7 +870,7 @@ footer .container .content .social p {
   /* Горизонтальное расположение информации */
   .hero .container .content .short-info {
     position: absolute;
-    bottom: 120px; /* Опущено ближе к стрелке */
+    bottom: 140px; /* Опущено ближе к стрелке */
     left: 0;
     right: 0;
     display: flex;
