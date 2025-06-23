@@ -852,6 +852,10 @@ footer .container .content .social p {
     min-height: 95vh;
     position: relative;
   }
+    /* Поднятие LAW & CODE, AI COMPLIANCE, URFU APPLI на 20px */
+  .hero .container .content .text {
+    margin-bottom: 20px !important; /* Добавлен отступ снизу */
+  }
   
   .hero .container .content .text h1 {
     font-size: 3.5rem !important;
@@ -896,7 +900,7 @@ footer .container .content .social p {
     line-height: 1.6;
     margin: 0;
   }
-   /* Центрирование стрелки */
+  /* Центрирование стрелки */
   .hero .container .content .arrow {
     position: absolute;
     bottom: 40px;
@@ -904,8 +908,16 @@ footer .container .content .social p {
     transform: translateX(-50%);
     width: 60px;
     height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0;
     z-index: 10;
+  }
+    /* Фикс для выравнивания стрелки */
+  .hero .container .content .arrow img {
+    display: block;
+    margin: 0 auto;
   }
   /* Фикс для пульсирующего элемента */
   .hero .container .content .short-info .right-side h1 {
