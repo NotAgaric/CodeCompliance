@@ -900,15 +900,21 @@ footer .container .content .social p {
     line-height: 1.6;
     margin: 0;
   }
-  /* Исправление позиции стрелки - центрирование */
+/* Смещение стрелки влево */
   .hero .container .content .arrow {
     position: absolute;
     bottom: 40px;
-    left: 70%;
+    left: calc(50% - 15px); /* Смещение на 15px влево */
+    transform: translateX(-50%);
     width: 60px;
     height: 60px;
     z-index: 10;
-    margin-left: 0 !important; /* Сброс любых левых отступов */
+  }
+  
+  /* Гарантия, что изображение стрелки центрировано */
+  .hero .container .content .arrow img {
+    display: block;
+    margin: 0 auto;
   }
   /* Фикс для пульсирующего элемента */
   .hero .container .content .short-info .right-side h1 {
