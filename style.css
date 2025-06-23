@@ -910,12 +910,6 @@ footer .container .content .social p {
     z-index: 10;
     margin-left: 0 !important; /* Сброс любых левых отступов */
   }
-  
-  /* Гарантия, что изображение стрелки центрировано */
-  .hero .container .content .arrow img {
-    display: block;
-    margin: 0 auto;
-  }
   /* Фикс для пульсирующего элемента */
   .hero .container .content .short-info .right-side h1 {
     position: relative;
