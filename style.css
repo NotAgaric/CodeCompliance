@@ -920,6 +920,12 @@ footer .container .content .social p {
     display: block;
     margin: 0 auto;
   }
+  .hero .container .content .arrow box-icon {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+}
   /* Фикс для пульсирующего элемента */
   .hero .container .content .short-info .right-side h1 {
     position: relative;
@@ -1011,7 +1017,7 @@ footer .container .content .social p {
   .about .container .content .profile-container .profile {
     height: 350px;
     border-radius: 32px;
-    background: #e0c9a6 !important;
+    background: #e0c9a6;
     border: 2px solid #e0c9a6;
     overflow: hidden;
     padding: 10px;
@@ -1087,17 +1093,23 @@ footer .container .content .social p {
   }
   
   /* Фикс для кнопки "See All Projects" */
-  .project .container .content .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 25px;
-  }
-  
-  .project .container .content .header .title {
-    flex: 1;
-    text-align: right;
-  }
+.project .container .content .header {
+  display: flex;
+  flex-direction: column; /* Изменено на колонку */
+  align-items: flex-start; /* Выравнивание по левому краю */
+  margin-bottom: 25px;
+}
+
+.project .container .content .header .title {
+  order: -1; /* Переместить заголовок выше кнопки */
+  margin-bottom: 15px;
+  text-align: left; /* Выравнивание по левому краю */
+  width: 100%;
+}
+
+.project .container .content .header button {
+  align-self: flex-end; /* Кнопка справа */
+}
   
   .project .container .content .header button {
     width: auto;
