@@ -865,7 +865,10 @@ footer .container .content .social p {
   
   /* Горизонтальное расположение информации */
   .hero .container .content .short-info {
-    position: relative;
+    position: absolute;
+    bottom: 120px; /* Опущено ближе к стрелке */
+    left: 0;
+    right: 0;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -873,11 +876,8 @@ footer .container .content .social p {
     align-items: center;
     gap: 15px;
     padding: 0 15px;
-    bottom: auto;
-    margin-top: 25px;
-    width: 100%;
+    margin-top: 0;
   }
-  
   .hero .container .content .short-info > div {
     display: flex;
     flex-direction: column;
@@ -896,7 +896,17 @@ footer .container .content .social p {
     line-height: 1.6;
     margin: 0;
   }
-  
+   /* Центрирование стрелки */
+  .hero .container .content .arrow {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    margin: 0;
+    z-index: 10;
+  }
   /* Фикс для пульсирующего элемента */
   .hero .container .content .short-info .right-side h1 {
     position: relative;
