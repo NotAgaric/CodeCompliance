@@ -900,20 +900,15 @@ footer .container .content .social p {
     line-height: 1.6;
     margin: 0;
   }
- /* Перемещаем стрелку вверх в HTML структуре */
-  .hero .container .content {
-    position: relative;
-  }
-  
-  /* Кастомное позиционирование стрелки с ручным смещением */
+  /* Смещение стрелки влево */
   .hero .container .content .arrow {
     position: absolute;
-    bottom:160px; /* Расположение внизу контента */
-    left: calc(50% - 50px); /* Центрирование с ручной корректировкой */
+    bottom: 160px;
+    left: calc(50% - 15px); /* Смещение на 15px влево */
+    transform: translateX(-50%);
     width: 60px;
     height: 60px;
-    z-index: 20; /* Поверх других элементов */
-    margin: 0;
+    z-index: 10;
   }
   
   /* Гарантия, что изображение стрелки центрировано */
