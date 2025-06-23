@@ -885,31 +885,41 @@ footer .container .content .social p {
   
   .hero .container .content .short-info .left-side h1,
   .hero .container .content .short-info .right-side h1 {
-    font-size: 1.1rem !important;
+    font-size: 1.4rem !important; /* Увеличен размер шрифта */
     display: flex;
     flex-direction: column;
     align-items: center;
+    line-height: 1.8; /* Увеличен межстрочный интервал */
   }
   
-  /* Возвращение анимации для статуса */
-  .hero .container .content .short-info .right-side h1 .pulse {
-    display: inline-block;
-    width: 6px;
-    height: 20px;
-    background: #ff6a00;
-    border-radius: 6px;
+  /* Фикс для пульсирующего элемента */
+  .hero .container .content .short-info .right-side h1 {
     position: relative;
-    margin-right: 5px;
+    padding-left: 20px; /* Добавлено место для пульсирующего элемента */
+  }
+  
+  .hero .container .content .short-info .right-side h1 .pulse {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: #ff6a00;
+    border-radius: 50%;
+    margin-right: 8px;
   }
   
   .hero .container .content .short-info .right-side h1 .pulse::after {
     content: "";
     position: absolute;
-    width: 6px;
-    height: 20px;
+    width: 100%;
+    height: 100%;
     background: #ff6a00;
-    border-radius: 6px;
+    border-radius: 50%;
     animation: pulse 1.5s infinite;
+    box-shadow: 0 0 0 0 rgba(255, 106, 0, 0.7);
   }
   
   @keyframes pulse {
@@ -917,8 +927,12 @@ footer .container .content .social p {
       transform: scale(1);
       opacity: 1;
     }
+    70% {
+      transform: scale(2.5);
+      opacity: 0;
+    }
     100% {
-      transform: scale(2);
+      transform: scale(1);
       opacity: 0;
     }
   }
@@ -926,25 +940,21 @@ footer .container .content .social p {
   /* Стрелка под временем и статусом */
   .hero .container .content .arrow {
     position: relative;
-    margin: 20px auto 0;
+    margin: 40px auto 0; /* Увеличен отступ сверху */
     bottom: auto;
     width: 60px;
     height: 60px;
     order: 3;
   }
   
-  /* Изменение часового пояса с +7 на +5 */
+  /* Изменение часового пояса */
   .hero .container .content .short-info .right-side h1 span:last-child::before {
-    content: "+5";
-  }
-  
-  .hero .container .content .short-info .right-side h1 span:last-child {
-    display: none;
+    content: "+7";
   }
   
   /* Секция "Обо мне" */
   .about {
-    margin: 40px 0 !important;
+    margin: 60px 0 40px !important; /* Увеличен верхний отступ */
   }
   
   .about .container .content {
@@ -970,11 +980,14 @@ footer .container .content .social p {
     font-size: 2.5rem !important;
   }
   
+  /* Вернули обводку вокруг изображения */
   .about .container .content .profile-container .profile {
     height: 350px;
     border-radius: 32px;
     background: transparent !important;
     overflow: hidden;
+    border: 2px solid #e0c9a6; /* Бежевая обводка */
+    box-sizing: border-box;
   }
   
   .about .container .content .profile-container .profile img {
@@ -1016,15 +1029,16 @@ footer .container .content .social p {
   .about .container .content .text-wrapper {
     position: relative;
     bottom: auto;
-    margin-top: 30px;
+    margin-top: -10px; /* Поднята выше */
     order: 5;
     z-index: 2;
   }
   
   .about .container .content .text-wrapper .text h1 {
-    font-size: 6rem !important;
+    font-size: 7rem !important; /* Увеличен размер */
     line-height: 0.8;
     white-space: nowrap;
+    margin-top: -15px; /* Поднята выше */
   }
   
   /* Проекты */
@@ -1132,7 +1146,8 @@ footer .container .content .social p {
   }
   
   .about .container .content .text-wrapper .text h1 {
-    font-size: 4rem !important;
+    font-size: 5rem !important; /* Увеличен размер */
+    margin-top: -10px; /* Поднята выше */
   }
   
   .project .container .content .project-area .projects {
@@ -1238,10 +1253,12 @@ footer .container .content .social p {
   
   .about .container .content .profile-container .profile {
     height: 250px;
+    border: 2px solid #e0c9a6; /* Обводка для горизонтальной ориентации */
   }
   
   .about .container .content .text-wrapper .text h1 {
-    font-size: 3.5rem !important;
+    font-size: 4rem !important; /* Увеличен размер */
+    margin-top: -10px; /* Поднята выше */
   }
   
   /* Проекты */
@@ -1270,11 +1287,25 @@ footer .container .content .social p {
   
   .contact .container .content .contact-area .left-side h1 {
     font-size: 1.8rem !important;
+    line-height: 1.4; /* Улучшена читаемость */
   }
   
   /* Форма контактов */
   .contact-form {
     max-width: 100%;
+  }
+  
+  /* Фикс для пульсирующего элемента в горизонтальной ориентации */
+  .hero .container .content .short-info .right-side h1 {
+    padding-left: 20px;
+    position: relative;
+  }
+  
+  .hero .container .content .short-info .right-side h1 .pulse {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 
@@ -1295,5 +1326,15 @@ footer .container .content .social p {
   
   .project .container .content .project-area .projects {
     height: 150px;
+  }
+  
+  .about .container .content .text-wrapper .text h1 {
+    font-size: 3rem !important; /* Уменьшен размер для коротких экранов */
+  }
+  
+  /* Уменьшаем шрифт в короткой ориентации */
+  .hero .container .content .short-info .left-side h1,
+  .hero .container .content .short-info .right-side h1 {
+    font-size: 1.2rem !important;
   }
 }
