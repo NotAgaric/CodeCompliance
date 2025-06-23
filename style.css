@@ -840,7 +840,7 @@ html {
 @media (max-width: 768px) {
   body {
     min-height: 100vh; /* Занимает всю высоту экрана */
-    background: #d6b08f !important; /* Переопределение цвета */
+    background: #dae3f1 !important; /* Переопределение цвета */
   }
 }
 
