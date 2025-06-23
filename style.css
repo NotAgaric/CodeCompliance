@@ -821,10 +821,10 @@ footer .container .content .social p {
 /* МОБИЛЬНАЯ АДАПТАЦИЯ (ТОЛЬКО ДЛЯ ТЕЛЕФОНОВ) */
 /* ========================================= */
 
-  @media only screen and (max-width: 768px) {
-  /* 1. Скрываем верхнюю надпись "AI COMPLIANCE ENGINEER" */
-  header .container .content .extra-nav {
-    display: none !important;
+@media only screen and (max-width: 768px) {
+  /* Общие исправления */
+  .container {
+    padding: 0 15px !important;
   }
   
   body {
@@ -900,7 +900,7 @@ footer .container .content .social p {
     line-height: 1.6;
     margin: 0;
   }
- /* 2. Исправление стрелки */
+/* Центрирование стрелки */
   .hero .container .content .arrow {
     position: absolute;
     bottom: 40px;
@@ -911,26 +911,15 @@ footer .container .content .social p {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0;
+    z-index: 10;
   }
-    
-  .hero .container .content .arrow box-icon {
-    position: relative;
-    left: 0;
-    transform: none;
-    margin: 0 auto;
-    display: block;
-  }
+  
   /* Фикс для выравнивания стрелки */
   .hero .container .content .arrow img {
     display: block;
     margin: 0 auto;
   }
-  .hero .container .content .arrow box-icon {
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  display: block;
-}
   /* Фикс для пульсирующего элемента */
   .hero .container .content .short-info .right-side h1 {
     position: relative;
@@ -1019,9 +1008,12 @@ footer .container .content .social p {
   }
   
   /* Бежевый фон и обводка вокруг изображения */
-  /* 3. Исправление фона в секции About */
   .about .container .content .profile-container .profile {
-    background: #e0c9a6 !important; /* Возвращаем бежевый фон */
+    height: 350px;
+    border-radius: 32px;
+    background: #e0c9a6 !important;
+    border: 2px solid #e0c9a6;
+    overflow: hidden;
     padding: 10px;
     box-sizing: border-box;
   }
@@ -1094,33 +1086,29 @@ footer .container .content .social p {
     margin-bottom: 20px;
   }
   
-  /* 4. Исправление заголовка проектов */
+  /* Фикс для кнопки "See All Projects" */
   .project .container .content .header {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .project .container .content .header .title {
-    order: 0;
-    text-align: left;
-    width: auto;
-    flex: 1;
-    min-width: 60%;
-  }
-
-  .project .container .content .header button {
-    align-self: center;
-    padding: 8px 12px;
-    font-size: 0.85rem;
-    white-space: normal;
-    text-align: center;
-    line-height: 1.3;
-    min-height: 50px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 25px;
+  }
+  
+  .project .container .content .header .title {
+    flex: 1;
+    text-align: right;
+  }
+  
+  .project .container .content .header button {
+    width: auto;
+    padding: 10px 20px;
+    white-space: nowrap;
+    font-size: 0.95rem;
+    background: transparent;
+    border: 2px solid var(--white);
+    border-radius: 32px;
+    color: var(--white);
+    transition: all 0.3s ease;
   }
   
   .project .container .content .header button:hover {
@@ -1203,22 +1191,6 @@ footer .container .content .social p {
   .project .container .content .project-area .projects {
     height: 240px;
   }
-    .project .container .content .header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .project .container .content .header .title {
-    margin-bottom: 15px;
-    width: 100%;
-  }
-  
-  .project .container .content .header button {
-    align-self: flex-start;
-    width: 100%;
-    max-width: 200px;
-  }
-}
   
   .contact .container .content .contact-area .left-side h1 {
     font-size: 2rem !important;
@@ -1250,38 +1222,16 @@ footer .container .content .social p {
     align-items: center;
   }
 }
-  footer .container .content .social {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin: 20px 0;
-  }
-  
-  footer .container .content .social .logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-  }
-  
-  footer .container .content .social .logo box-icon {
-    display: block;
-    margin: 0 auto;
-  }
-}
 
 /* ================================================= */
 /* АДАПТАЦИЯ ДЛЯ ГОРИЗОНТАЛЬНОЙ ОРИЕНТАЦИИ ТЕЛЕФОНА */
 /* ================================================= */
 
 @media only screen and (max-width: 768px) and (orientation: landscape) {
-  .about .container .content .profile-container .profile {
-    background: #e0c9a6 !important;
+  /* Общие стили для горизонтальной ориентации */
+  body {
+    font-size: 13px;
   }
-}
   
   /* Шапка */
   header .container .content {
