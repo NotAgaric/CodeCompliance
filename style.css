@@ -833,6 +833,16 @@ footer .container .content .social p {
     overflow-x: hidden;
   }
 
+  /* 5. Фикс шапки - делаем фиксированной */
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: var(--black);
+    padding: 10px 0;
+  }
+
   /* Шапка */
   header .container .content {
     flex-direction: column;
@@ -848,7 +858,7 @@ footer .container .content .social p {
   
   /* Герой-секция */
   .hero {
-    padding: 90px 0 40px !important;
+    padding: 120px 0 40px !important; /* Увеличено сверху для фиксированной шапки */
     min-height: 95vh;
     position: relative;
   }
@@ -857,10 +867,21 @@ footer .container .content .social p {
     font-size: 3.5rem !important;
     line-height: 1.2;
     text-align: center;
+    /* 2. Отступ снизу чтобы не залазил на кнопку */
+    margin-bottom: 30px !important; 
   }
   
   .hero .container .content .text .row-2 {
     margin-left: 0;
+    transition: all 0.3s ease; /* Для плавного скрытия */
+  }
+
+  /* 5. Скрытие заголовка при скролле */
+  body.scrolled .hero .container .content .text .row-2 {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    margin: 0;
   }
   
   /* Горизонтальное расположение информации */
@@ -882,8 +903,10 @@ footer .container .content .social p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center; /* 1. Центрирование по вертикали */
     width: auto;
     min-width: 160px;
+    height: 60px; /* 1. Фиксированная высота для выравнивания */
     text-align: center;
   }
   
@@ -1061,23 +1084,35 @@ footer .container .content .social p {
     width: 100%;
     height: 280px;
     margin-bottom: 20px;
+    /* 4. Фикс растянутых изображений */
+    overflow: hidden;
   }
   
-  /* Фикс для кнопки "See All Projects" */
+  /* 4. Сохраняем пропорции изображений */
+  .project .container .content .project-area .projects img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* 3. Фикс для кнопки "See All Projects" */
   .project .container .content .header {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    flex-direction: column; /* Меняем на колонку */
+    align-items: flex-start;
     margin-bottom: 25px;
   }
   
   .project .container .content .header .title {
     flex: 1;
-    text-align: right;
+    text-align: left; /* Выравниваем по левому краю */
+    width: 100%;
+    margin-bottom: 15px; /* Отступ перед кнопкой */
   }
   
   .project .container .content .header button {
-    width: auto;
+    width: 100%;
+    max-width: 200px;
     padding: 10px 20px;
     white-space: nowrap;
     font-size: 0.95rem;
@@ -1135,6 +1170,28 @@ footer .container .content .social p {
   footer .container .content {
     padding: 30px 0;
   }
+
+  /* 6. Фикс иконок соцсетей */
+  footer .socials {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  footer .socials a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+  }
+  
+  footer .socials a i {
+    font-size: 18px;
+  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -1181,7 +1238,7 @@ footer .container .content .social p {
   
   /* Уменьшаем отступы */
   .hero {
-    padding: 80px 0 30px !important;
+    padding: 120px 0 30px !important; /* Сохраняем отступ для шапки */
   }
   
   .about, .project, .contact {
@@ -1215,10 +1272,10 @@ footer .container .content .social p {
     flex-direction: row;
     padding: 5px 0;
   }
-  
-  /* Герой-секция */
+
+  /* 5. Уменьшаем отступ шапки в горизонтальном режиме */
   .hero {
-    padding: 70px 0 20px !important;
+    padding: 90px 0 20px !important;
     min-height: 85vh;
   }
   
@@ -1237,6 +1294,7 @@ footer .container .content .social p {
   .hero .container .content .short-info > div {
     width: auto;
     min-width: 180px;
+    height: 50px; /* 1. Фиксированная высота для горизонтального режима */
   }
   
   .hero .container .content .arrow {
@@ -1312,6 +1370,18 @@ footer .container .content .social p {
     margin-bottom: 15px;
   }
   
+  /* 3. Фикс кнопки в ландшафтном режиме */
+  .project .container .content .header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .project .container .content .header button {
+    margin-top: 0;
+    width: auto;
+  }
+  
   /* Контакты */
   .contact .container .content .contact-area {
     flex-direction: row;
@@ -1338,7 +1408,7 @@ footer .container .content .social p {
 @media only screen and (max-width: 768px) and (orientation: landscape) and (max-height: 400px) {
   /* Дополнительные стили для очень коротких экранов */
   .hero {
-    padding: 50px 0 15px !important;
+    padding: 80px 0 15px !important; /* Учитываем фиксированную шапку */
     min-height: 80vh;
   }
   
