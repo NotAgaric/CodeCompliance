@@ -219,6 +219,15 @@
     <script>
       AOS.init();
     </script>
+    <script>
+    // Скрытие заголовка AI COMPLIANCE ENGINEER при скролле
+    document.addEventListener('DOMContentLoaded', function() {
+      window.addEventListener('scroll', function() {
+        const scrolled = window.scrollY > 50;
+        document.body.classList.toggle('scrolled', scrolled);
+      });
+    });
+    </script>
   </body>
     <style>
     @media (max-width: 767px) {
